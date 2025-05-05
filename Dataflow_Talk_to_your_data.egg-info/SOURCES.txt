@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+Dataflow_Talk_to_your_data.egg-info/PKG-INFO
+Dataflow_Talk_to_your_data.egg-info/SOURCES.txt
+Dataflow_Talk_to_your_data.egg-info/dependency_links.txt
+Dataflow_Talk_to_your_data.egg-info/requires.txt
+Dataflow_Talk_to_your_data.egg-info/top_level.txt
+ml_ai_pipeline/__init__.py
+ml_ai_pipeline/model_handlers.py
+ml_ai_pipeline/pipeline.py

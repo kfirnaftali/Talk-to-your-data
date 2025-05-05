@@ -1,0 +1,5 @@
+apache-beam[gcp]==2.63.0
+keras-hub
+keras==3.9.0
+pandas>=1.0.0
+protobuf==4.25.6
