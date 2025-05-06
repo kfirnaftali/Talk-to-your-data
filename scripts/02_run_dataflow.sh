@@ -13,7 +13,7 @@
 #  limitations under the License.   --save_main_session \
 
 python main.py \
-  --runner=PrismRunner \
+  --runner=DataflowRunner \
   --project=$PROJECT \
   --temp_location=gs://dataflow-gemma-weights/tmp \
   --region=$REGION \
