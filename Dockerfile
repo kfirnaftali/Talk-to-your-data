@@ -12,7 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-ARG SERVING_BUILD_IMAGE=tensorflow/tensorflow:2.18.0-gpu
+ARG SERVING_BUILD_IMAGE=tensorflow/tensorflow:2.19.0-gpu
 FROM ${SERVING_BUILD_IMAGE}
 WORKDIR /workspace
 
@@ -30,7 +30,7 @@ RUN pip install --upgrade --no-cache-dir pip \
   && pip install --no-cache-dir -e .
 
 # Copy files from official SDK image, including script/dependencies.
-COPY --from=apache/beam_python3.11_sdk:2.63.0 /opt/apache/beam /opt/apache/beam
+COPY --from=apache/beam_python3.12_sdk:2.66.0 /opt/apache/beam /opt/apache/beam
 
 COPY gemma_2B gemma_2B
 

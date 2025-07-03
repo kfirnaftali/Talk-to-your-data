@@ -12,9 +12,9 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-apache-beam[gcp]==2.63.0
+apache-beam[gcp]==2.66.0
 keras-hub
-keras==3.9.0
-protobuf==4.25.6
+keras==3.10.0
+protobuf==5.29.5
 pandas>=1.0.0
-#keras_nlp==0.19.2
+
