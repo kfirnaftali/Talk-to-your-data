@@ -13,23 +13,23 @@
 #  limitations under the License.   --save_main_session \
 
 python main.py \
+  --streaming \
   --runner=DataflowRunner \
   --project=$PROJECT \
-  --temp_location=gs://dataflow-gemma-weights/tmp \
+  --temp_location=gs://$PROJECT/tmp \
+  --service_account_email=$SERVICE_ACCOUNT \
   --region=$REGION \
   --machine_type=$MACHINE_TYPE \
   --num_workers=1 \
   --disk_size_gb=$DISK_SIZE_GB \
   --max_num_workers=$MAX_DATAFLOW_WORKERS \
-  --no_use_public_ip \
-  --subnetwork="regions/us-central1/subnetworks/dataflow-vpc" \
+  --no_use_public_ips \
+  --subnetwork=$SUBNETWORK \
   --sdk_container_image=$CONTAINER_URI \
   --dataflow_service_options="worker_accelerator=type:nvidia-l4;count:1;install-nvidia-driver:5xx" \
-  --input_gaming_sub=projects/demos-337108/subscriptions/gaming-data-sub \
-  --output_sql_topic=projects/demos-337108/topics/gaming-data-output \
-  --input_questions_sub=projects/demos-337108/subscriptions/cfo-questions-sub \
+  --input_gaming_sub=projects/$PROJECT/subscriptions/gaming-data-sub \
+  --output_sql_topic=projects/$PROJECT/topics/predictions \
+  --input_questions_sub=projects/$PROJECT/subscriptions/questions-sub \
   --max_length=128 \
-  --model_path="gemma_2B" \
-  --sql_gen_model_path="gemma_2B" \
+  --sql_gen_model_path=/workspace/gemma3_4B \
   --setup_file=./setup.py
-

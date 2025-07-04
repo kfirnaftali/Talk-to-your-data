@@ -185,7 +185,7 @@ def create_pipeline(options) -> Pipeline:
 
   # Use model_name and max_length from options for GemmaModelHandler
   sql_gen_handler = GemmaModelHandler(
-      model_name=options.sql_gen_model_name,
+      model_name=options.sql_gen_model_path,
       max_length=options.sql_gen_max_length)
   sql_predictions = sql_prompts | "RunSQLGemmaInference" >> RunInference(
       sql_gen_handler)
